@@ -50,6 +50,7 @@ kv_string = '''
         Color:
             rgb: 1, 1, 1
         Rectangle:
+            # source: #whatever source I can find
             size: self.size
 
     AsyncImage:
@@ -161,10 +162,12 @@ class CustomChooser(FileChooserListView): #need to declare FileChooserListView e
             #actual jpg
             #not a jpg
             #folder (not possible to choose apparently)
+        # import pdb
+        # pdb.set_trace()   
         if self.selection != [] and str(self.selection[0]).split(".")[-1] == "jpg": 
             print("is jpg!")
-            import pdb
-            pdb.set_trace()
+            # import pdb
+            # pdb.set_trace()
             #hint: App.get_running_app().root
             #set the source of the image
             import os
@@ -176,6 +179,8 @@ class CustomChooser(FileChooserListView): #need to declare FileChooserListView e
             self.parent.parent.parent.current = 'start_screen_name'
             
         else: 
+            # import pdb
+            # pdb.set_trace()
             self.parent.parent.loadtext = "Please choose a jpg file."
     
 
