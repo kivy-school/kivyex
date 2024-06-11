@@ -1,0 +1,6 @@
+.DS_Store
+ignorethis
+.cache
+.venv
+poetry.lock
+PRINTEDIMAGE.png
