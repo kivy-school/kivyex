@@ -3,4 +3,3 @@ ignorethis
 .cache
 .venv
 poetry.lock
-PRINTEDIMAGE.png
