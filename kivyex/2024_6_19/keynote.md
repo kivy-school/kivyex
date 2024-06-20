@@ -1,0 +1,71 @@
+- [x] matplotlib widget video:
+ - [x] this is a repo showcase, also mp 007 updates on the kivy discord often
+ - [x] https://github.com/mp-007/kivy_matplotlib_widget/tree/main
+ - [x] kivy garden matplotlib is not updated:
+	 - [x] https://github.com/kivy-garden/garden.matplotlib
+ - [x] PREREQ: INSTALL VIDEO
+ - [x] **why use this widget?**
+	 - [x] If you have a need to display graphs, matplotlib + kivy is one solution.
+ - [x] plotly from what I have seen does not have a UI or buttons to press, it just graphs well
+ - [x] https://plotly.com/graphing-libraries/
+ - [x] https://www.geeksforgeeks.org/python-plotly-tutorial/#heatmaps
+- [x] INSTALLATION
+	- [x] go over installation (just pip install kivy-matplotlib-widget or poetry add kivy-matplotlib-widget)
+	- [x] to check out the examples:
+	- [x] git clone the repo https://github.com/mp-007/kivy_matplotlib_widget
+- [x] cd to examples and check it out!
+- [x] .
+- [ ] KEY FEATURES:
+	- [x] reset axis on double-click (home button)
+	- [x] **zoom** with 2 fingers or **mouse scroll**
+	- [x] **pan** with 1 finger or mouse left click
+	- [x] **zoom box** like plotly library
+	- [x] fast rendering mode (axis not updated for faster draw)
+	- [x] use only 1 package (matplotlib) and no additional backend
+	- [x] cursor and hover option (touch or desktop mode) > bugged from my experience
+	- [x] legend widget like plotly library
+	- [x] interactive axis like plotly library
+	- [x] min/max touch option to easily change axis limit
+		- [x] touch the axis, type in a number
+- [x] .
+- [x] example basic is ok (probs should be first)
+- [x] example_all_interactive_options
+	- [x] home/back are the previous views u had
+	- [x] show all the basic features
+	- [x] SHOW HOW TO CHANGE THE PLOT
+		- [x] hint: modify graph generator.py, but it's basic matplotlib
+- [x] example_advance_interactive_legend WORKS
+- [ ] .
+- [x] example_legend_matpotlib_with_figure_update, updates the figures properly
+- [x] example_live_data, updates very nicely
+- [x] example_live_with_big_data, pretty good
+- [ ] .
+- [x] example_custom_touch_widget, works, even shows u the line setting and line data (by click dragging)
+- [x] example_kivy_navigation_bar, works, feature is adding data points
+- [x] example_legend, it adds plots and their line legends
+- [x] example_legend_horizontal, same as legend but legend is horizontal
+- [x] example_legend_matplotlib, all plots combined, pretty good
+- [x] example_slider,
+	- [x] sinusoidal wave simulator
+- [x] example_twinx,
+	- [x] has the features we've seen before, two graphs being displayed
+- [x] navigation_bar_general_purpose, works
+- [x] example_twinx with an x,y cursor revealer
+- [ ] .
+- [x] example_seaborn > need to add seaborn manually, works tho
+- [ ] .
+- [x] example_interactive_axis, same stuff
+- [x] example big_data, works fine
+- [x] example_compare_hover, nearest button dies BUT works
+- [x] example_cursor_scatter, works but cursor option dies
+- [ ] BUGGED EXAMPLES
+- [x] <might  have  to  do  with  a  poetry  install  instead  of  a  pip  install?  unsure>
+- [x] skipped example basic with pip install
+- [x] exampe_minmax_option dies easily
+- [x] example 4 died (might need to be on linux)
+	- [ ] bug is that join -> joined, line 385
+		- [ ] ax1.get_shared_y_axes().joined(ax1, ax3)
+- [x] example 3d works (is a 3d shape/graph)
+- [x] example_cursor dies on cursor option
+- [x] example_hover dies on init
+- [ ] example_mplcursors, dies on init
