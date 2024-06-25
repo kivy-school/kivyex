@@ -15,7 +15,39 @@ from kivy.metrics import dp
 
 Builder.load_string('''
 
-<CustomDD@Dropdown>:
+<CustomDD@DropDown>:
+    Button: 
+        id: ddID1
+        text: "Add to queue"
+        on_release: print(self.text)
+    Button: 
+        id: ddID2
+        text: "Save to Watch Later"
+        on_release: print(self.text)
+    Button: 
+        id: ddID3
+        text: "Save to Playlist"
+        on_release: print(self.text)
+    Button: 
+        id: ddID4
+        text: "Download"
+        on_release: print(self.text)
+    Button: 
+        id: ddID5
+        text: "Share"
+        on_release: print(self.text)
+    Button: 
+        id: ddID6
+        text: "Not interested"
+        on_release: print(self.text)
+    Button: 
+        id: ddID7
+        text: "Don't recommend channel"
+        on_release: print(self.text)
+    Button: 
+        id: ddID8
+        text: "Report"
+        on_release: print(self.text)
                     
 <SelectableBoxLayout>:
     orientation: 'horizontal'
@@ -27,8 +59,10 @@ Builder.load_string('''
         Rectangle:
             pos: self.pos
             size: self.size
+            
     AsyncImage: 
         id: thumbID
+        # size_x: dp(50)
         # size_hint: (1,0.6)
     
     BoxLayout:
@@ -65,20 +99,29 @@ Builder.load_string('''
             halign: 'left'
                     
         Label:
+            # text: 'blah blah ' * 1000
             text: 'blah blah ' * 1000
             text_size: self.width, None
             size_hint: 1, None
             height: self.texture_size[1]
-    
+            max_lines: 2
+            # shorten: True
+            # shorten_from: right
+            # split_str: " "
+                        
     BoxLayout:
-        id: "buttonBoxID"
+        id: buttonBoxID
         orientation: 'vertical'
         size_hint: (0.1,1)
         
-        Button: 
+        # Button: 
+        #     id: ddID
+            # on_release: print()
+        CustomDD:
             id: ddID
-            on_release: print("nothing")
 
+    # Button:
+    #     id: testButtonID
 
 <RV>:
     viewclass: 'SelectableBoxLayout'
@@ -114,7 +157,9 @@ class SelectableBoxLayout(RecycleKVIDsDataViewBehavior, BoxLayout):
             return True
         if self.collide_point(*touch.pos) and self.selectable:
             return self.parent.select_with_touch(self.index, touch)        
-        self.parent.parent.refresh_from_data()
+        # self.parent.parent.refresh_from_data()
+        # import pdb
+        # pdb.set_trace()
         
     def on_touch_up(self, touch): #touch is laggy because touch up takes a while
         # self.parent.parent.refresh_from_data()
@@ -133,6 +178,7 @@ class RV(RecycleView):
     def __init__(self, **kwargs):
         super(RV, self).__init__(**kwargs)
         self.rvdata = [{"videoTitleID.text": "id: "+ str(x*2) + " VERY LONG COOL YOUTUBE TITLE!", 'videoAuthorID.text': 'Employee:' + '\N{pensive face}'} for x in range(10)]
+        # self.rvdata = [{"testButtonID.text": "id: "+ str(x*2) + " VERY LONG COOL YOUTUBE TITLE!"} for x in range(10)]
         
 class TestApp(App):
     def build(self):
