@@ -1,7 +1,7 @@
 # kivyex
 Library of Kivy School Examples
 
-[![Watch the video](https://img.youtube.com/vi/qiIFJIqMHV0/maxresdefault.jpg)](https://www.youtube.com/embed/qiIFJIqMHV0)
+[![Watch the video](https://img.youtube.com/vi/f6PM5_11cZA/maxresdefault.jpg)](https://www.youtube.com/embed/f6PM5_11cZA)
 kivyschool link: https://kivyschool.com/pyinstaller_instructions/
 
 [![Watch the video](https://img.youtube.com/vi/qGE8CFq3xuI/maxresdefault.jpg)](https://www.youtube.com/embed/qGE8CFq3xuI)
