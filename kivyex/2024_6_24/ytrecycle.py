@@ -112,14 +112,49 @@ Builder.load_string('''
     BoxLayout:
         id: buttonBoxID
         orientation: 'vertical'
-        size_hint: (0.1,1)
+        # size_hint: (0.1,1)
         
-        # Button: 
-        #     id: ddID
-            # on_release: print()
-        CustomDD:
-            id: ddID
+        Button: 
+            id: ddbuttonID
+            text: "..."
+            # on_release: ddID.open(self)
 
+        # CustomDD:
+        # DropDown:
+        #     id: ddID
+        #     # on_release: self.open
+        #     Button: 
+        #         id: ddID1
+        #         text: "Add to queue"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID2
+        #         text: "Save to Watch Later"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID3
+        #         text: "Save to Playlist"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID4
+        #         text: "Download"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID5
+        #         text: "Share"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID6
+        #         text: "Not interested"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID7
+        #         text: "Don't recommend channel"
+        #         on_release: print(self.text)
+        #     Button: 
+        #         id: ddID8
+        #         text: "Report"
+        #         on_release: print(self.text)
     # Button:
     #     id: testButtonID
 
