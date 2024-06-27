@@ -170,7 +170,7 @@ class DropdownButton(Button):
             "\U000F0B8F", #download outline
             "\U000F0932", #share outline
             "\U000F073A", #cancel
-            
+            "\U000F0377", #"minus-circle-outline"
             "\U000F023B", #flag
         ]
         for i in range(8):
@@ -188,9 +188,10 @@ class DropdownButton(Button):
                     # text_size= (170, 44),
                     # text_size= (253, 36), #the acutal size
                     text_size= (240, 30), #resized to fit text properly
-                    halign= 'left'
+                    halign= 'left',
                     )
             btn.id= "ddID" + str(i) #https://stackoverflow.com/questions/52151553/how-to-set-kivy-widget-id-from-python-code-file
+            btn.on_release = lambda: print(btn.text + "your console shows a square because it does not have materialdesignicons-webfont.ttf as a font")
             btn.width = 300
             # btn.bind(on_release=lambda btn: self.select(btn.text))
             self.individual_dropdown.add_widget(btn)
