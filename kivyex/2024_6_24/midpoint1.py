@@ -11,15 +11,51 @@ from kivy.uix.image import AsyncImage
 from kivy.metrics import dp
 from kivy.uix.dropdown import DropDown
 from kivy.uix.button import Button
-from kivy.uix.widget import Widget
 
 #emoji rendering
 # https://www.reddit.com/r/kivy/comments/12l0x8n/any_fix_for_emoji_rendering/
 
 Builder.load_string('''
 
+<CustomDD>:
+    Button: 
+        id: ddID1
+        text: "Add to queue"
+        on_release: print(self.text)
+    Button: 
+        id: ddID2
+        text: "Save to Watch Later"
+        on_release: print(self.text)
+    Button: 
+        id: ddID3
+        text: "Save to Playlist"
+        on_release: print(self.text)
+    Button: 
+        id: ddID4
+        text: "Download"
+        on_release: print(self.text)
+    Button: 
+        id: ddID5
+        text: "Share"
+        on_release: print(self.text)
+    Button: 
+        id: ddID6
+        text: "Not interested"
+        on_release: print(self.text)
+    Button: 
+        id: ddID7
+        text: "Don't recommend channel"
+        on_release: print(self.text)
+    Button: 
+        id: ddID8
+        text: "Report"
+        on_release: print(self.text)
+                    
 <SelectableBoxLayout>:
     orientation: 'horizontal'
+                    
+    #https://stackoverflow.com/a/49493556/16355112 (dropdown reference keeps getting lost somehow)
+    # __save_id: [ddID.__self__]
                     
     # Draw a background to indicate selection
     canvas.before:
@@ -46,6 +82,7 @@ Builder.load_string('''
             size_hint: (1,1)
             # https://stackoverflow.com/questions/52222205/python-how-to-make-label-bold-in-kivy
             bold: True
+
             
             text_size: self.size
             halign: 'left'
@@ -80,7 +117,7 @@ Builder.load_string('''
     BoxLayout:
         id: buttonBoxID
         orientation: 'vertical'
-        size_hint: (0.1,1)
+        # size_hint: (0.1,1)
         
         # Spinner: 
         #     values: 'Home', 'Work', 'Other', 'Custom'
@@ -90,13 +127,65 @@ Builder.load_string('''
             text: "..."
             on_parent: self.individual_dropdown.dismiss()
             on_release: 
-                self.open_dd(self)
-                # self.individual_dropdown.open(self)
+                self.individual_dropdown.open(self)
                 # import pdb
                 # pdb.set_trace()
+            # on_release: self.parent.parent.ddboxopen(self)
+            # on_release: 
+            #     import pdb
+            #     pdb.set_trace()
+            # on_parent: ddID.dismiss()
+            # on_release: ddID.open(self)
+            # on_press: ddID.open(self)
             # https://stackoverflow.com/questions/54606119/why-kivy-dropdown-does-not-show
             # TL:DR; buttons heights need to be set
         
+        # DropDown:
+        #     id: ddID
+        #     Button: 
+        #         id: ddID1
+        #         text: "DD 1 TESTING"
+        #         on_release: print(self.text)
+        #         height: dp(10)
+
+        # # CustomDD:
+        # # DropDown:
+        #     # ddID: ddID.__self__
+        #     # id: ddID
+        #     # id: ddID
+        #     # on_release: self.open
+        #     Button: 
+        #         id: ddID1
+        #         text: "Add to queue"
+        #         on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID2
+        #     #     text: "Save to Watch Later"
+        #     #     on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID3
+        #     #     text: "Save to Playlist"
+        #     #     on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID4
+        #     #     text: "Download"
+        #     #     on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID5
+        #     #     text: "Share"
+        #     #     on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID6
+        #     #     text: "Not interested"
+        #     #     on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID7
+        #     #     text: "Don't recommend channel"
+        #     #     on_release: print(self.text)
+        #     # Button: 
+        #     #     id: ddID8
+        #     #     text: "Report"
+        #     #     on_release: print(self.text)
     # Button:
     #     id: testButtonID
 
@@ -150,50 +239,28 @@ class SelectableBoxLayout(RecycleKVIDsDataViewBehavior, BoxLayout):
         else:
             print("selection removed for {0}".format(rv.rvdata[index]))
     
+    def ddboxopen(self, button):
+        dropdown_obj = customDD()
+        # import pdb
+        # pdb.set_trace()
+        dropdown_obj.open(button)
+
+
+class customDD(DropDown):
+    def on_is_open(self, instance, value):
+        self.dismiss()
+
 class DropdownButton(Button):
     def __init__(self, *args, **kwargs):
         super(Button, self).__init__(*args, **kwargs)
-        self.individual_dropdown = DropDown()
-        textlist = [
-            "Add to queue",
-            "Save to Watch Later",
-            "Save to playlist",
-            "Download",
-            "Share",
-            "Not interested",
-            "Don't recommend channel",
-            "Report"
-        ]
-        for i in range(8):
-            btn = Button(
-                    text=f' {textlist[i]}', 
-                    size_hint_y=None, 
-                    # size= (300, 40), 
-                    height=44,
-                    # width=3000,
-                    text_size= (190, 40),
-                    halign= 'left'
-                    )
-            btn.id= "ddID" + str(i) #https://stackoverflow.com/questions/52151553/how-to-set-kivy-widget-id-from-python-code-file
-            btn.width = 300
+        self.individual_dropdown = customDD()
+        # self.individual_dropdown = DropDown()
+        for i in range(3):
+            btn = Button(text=f'Option {i+1}', size_hint_y=None, height=44)
             btn.bind(on_release=lambda btn: self.select(btn.text))
             self.individual_dropdown.add_widget(btn)
-    
-    def open_dd(self, args):
-        #https://stackoverflow.com/questions/67295056/how-do-i-increase-the-width-of-the-dropdown-list-within-a-spinner
-        self.option_width = 300
-        self.invisible_attacher = Widget(opacity=0, size_hint=(None, None))
-        self.add_widget(self.invisible_attacher)
-        self.invisible_attacher.pos = (self.center_x - self.option_width/2, self.y)
-        self.invisible_attacher.size = (self.option_width, self.height)
-        attacher = self.invisible_attacher
-        # open th DropDown
-        self.individual_dropdown.open(attacher)
-        # self.individual_dropdown.open(self)
 
-        
-        # import pdb
-        # pdb.set_trace()
+
 
 class RV(RecycleView):
     rvdata = ListProperty() 
