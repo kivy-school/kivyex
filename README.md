@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/qiIFJIqMHV0/maxresdefault.jpg)](https://www.youtube.com/embed/qiIFJIqMHV0)
+kivyschool link: https://kivyschool.com/pyinstaller_instructions/
+
 [![Watch the video](https://img.youtube.com/vi/qGE8CFq3xuI/maxresdefault.jpg)](https://www.youtube.com/embed/qGE8CFq3xuI)
 kivyschool link: https://kivyschool.com/blog/2024/06/19/matplotlib/
 
