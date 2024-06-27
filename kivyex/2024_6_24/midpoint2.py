@@ -12,7 +12,6 @@ from kivy.metrics import dp
 from kivy.uix.dropdown import DropDown
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
-from kivy.uix.label import Label
 
 #emoji rendering
 # https://www.reddit.com/r/kivy/comments/12l0x8n/any_fix_for_emoji_rendering/
@@ -156,56 +155,33 @@ class DropdownButton(Button):
         super(Button, self).__init__(*args, **kwargs)
         self.individual_dropdown = DropDown()
         textlist = [
-            # "Check Add to queue",
-            # "Save to Watch Later",
-            # "Save to playlist",
-            # "Download",
-            # "Share",
-            # "Not interested",
-            # "Don't recommend channel",
-            # "Report"
-            "\U000F0411",  #playlist play
-            "\U000F0954", #clock
-            "\U000F0412", #playlist plus
-            "\U000F0B8F", #download outline
-            "\U000F0932", #share outline
-            "\U000F073A", #cancel
-            
-            "\U000F023B", #flag
+            "Add to queue",
+            "Save to Watch Later",
+            "Save to playlist",
+            "Download",
+            "Share",
+            "Not interested",
+            "Don't recommend channel",
+            "Report"
         ]
         for i in range(8):
-            bLayout = BoxLayout()
             btn = Button(
                     text=f' {textlist[i]}', 
-                    # text= u"\U000F05C7 " + "test", 
                     size_hint_y=None, 
-                    font_name='materialdesignicons-webfont.ttf',
-                    font_size= dp(30),
                     # size= (300, 40), 
-                    height=36,
+                    height=44,
                     # width=3000,
-                    # text_size= (150, 30),
-                    # text_size= (170, 44),
-                    # text_size= (253, 36), #the acutal size
-                    text_size= (240, 30), #resized to fit text properly
+                    text_size= (190, 40),
                     halign= 'left'
                     )
             btn.id= "ddID" + str(i) #https://stackoverflow.com/questions/52151553/how-to-set-kivy-widget-id-from-python-code-file
             btn.width = 300
-            # btn.bind(on_release=lambda btn: self.select(btn.text))
+            btn.bind(on_release=lambda btn: self.select(btn.text))
             self.individual_dropdown.add_widget(btn)
-            # bLayout.add_widget(btn)
-            # lbl = Label(
-            #     text= "heya",
-            #     font_name="Roboto"
-            # )
-            # bLayout.add_widget(lbl)
-
-            # self.individual_dropdown.add_widget(bLayout)
     
     def open_dd(self, args):
         #https://stackoverflow.com/questions/67295056/how-do-i-increase-the-width-of-the-dropdown-list-within-a-spinner
-        self.option_width = 253
+        self.option_width = 170
         self.invisible_attacher = Widget(opacity=0, size_hint=(None, None))
         self.add_widget(self.invisible_attacher)
         self.invisible_attacher.pos = (self.center_x - self.option_width/2, self.y)
