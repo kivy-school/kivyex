@@ -191,7 +191,7 @@ class DropdownButton(Button):
                     halign= 'left',
                     )
             btn.id= "ddID" + str(i) #https://stackoverflow.com/questions/52151553/how-to-set-kivy-widget-id-from-python-code-file
-            btn.on_release = lambda: print(btn.text + " your console shows a square because it does not have materialdesignicons-webfont.ttf as a font")
+            btn.on_release = lambda: print(btn.text + "your console shows a square because it does not have materialdesignicons-webfont.ttf as a font")
             btn.width = 300
             # btn.bind(on_release=lambda btn: self.select(btn.text))
             self.individual_dropdown.add_widget(btn)
