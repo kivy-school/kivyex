@@ -55,6 +55,7 @@ kv_string = '''
                 on_release: 
                     # import pdb
                     # pdb.set_trace()
+                    #app.get_running_app().root.current
                     root.parent.current = 'settingsscreen'
             Button: 
                 text: "\U000F0630"
@@ -87,6 +88,8 @@ kv_string = '''
             on_release: root.parent.current = 'startscreen'
         Button: 
             text: "Settings screen!"
+            on_release:
+                self.text = app.get_running_app().root.current 
 
 <UserScreen@Screen>:
     BoxLayout:
@@ -106,7 +109,7 @@ kv_string = '''
             size_hint: (1, 0.1)
             on_release: root.parent.current = 'startscreen'
         Button: 
-            text: "User screen!"
+            text: "Media screen!"
 
 <TrendingScreen@Screen>:
     BoxLayout:
