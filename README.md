@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/N2N_N7Z6b9I/maxresdefault.jpg)](https://www.youtube.com/embed/N2N_N7Z6b9I)
+kivyschool link: https://kivyschool.com/blog/2024/07/03/screenmanagerexample/
+
 [![Watch the video](https://img.youtube.com/vi/f6PM5_11cZA/maxresdefault.jpg)](https://www.youtube.com/embed/f6PM5_11cZA)
 kivyschool link: https://kivyschool.com/pyinstaller_instructions/
 
