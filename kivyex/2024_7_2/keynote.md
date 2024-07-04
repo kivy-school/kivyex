@@ -1,0 +1,42 @@
+ - [x] screen manager video
+ - [x] https://kivy.org/doc/stable/api-kivy.uix.screenmanager.html
+ - [x] screen managers are used to manage apps with multiple screens
+ - [x] prebuilt solution provided by kivy
+ - [x] let's get started!
+ - [x] When you are creating a screen, **you absolutely need to give a name to it**:
+ - [x] By default, the first screen added into the ScreenManager will be displayed. You can then change to another screen.
+ - [x] .
+ - [x] todo:
+ - [x] 5 screens:
+	 - [x] 1 home page
+	 - [x] 2 settings page
+	 - [x] 3 user profile
+	 - [x] 4 media page
+	 - [x] 5 trending page
+ - [ ] .
+ - [x] go over code line by line:
+	 - [x] most important line: I RETURN THE SCREENMANAGER AS THE ROOT WIDGET
+ - [ ] notes:
+	 - [ ] 1.  how to switch screens
+		 - [x] screen manager.current = 'screen_name'
+		 - [x] why root.parent?
+		 - [x] root.parent.current = 'settingsscreen'
+		 - [x] basically, u have to tell the screen manager itself to change screens:
+		 - [x] 2 ways to do that:
+		 - [x] root.parent.current (bottom up)
+		 - [x] top down:
+		 - [x] app.get_running_app().root
+		 - [x] use pdb to show kivy.factory.ScreenManagerExample
+	 - [x] 2.  how to get current screen
+		 - [x] example in settings screen button
+	 - [x] 3.  the PROPER way to manipulate widgets when using screen manager:
+		 - [x] have some sort of backend/datatype that your widgets read from/inherit from
+		 - [x] example:
+	 - [x] look at facebook
+		 - [x] web page that queries the facebook backend, and displays the information accordingly
+ - [x] 3a. because we do not have a backend, I will show you how to manually manipulate widgets instead
+ - [x] 3b. how to manipulate widget from App.get_running_app
+	 - [x] another example is the imagepainter app
+ - [x] 3c. how to manipulate widget in another screen:
+	 - [x] change the text on the button
+
