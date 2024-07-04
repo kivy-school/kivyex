@@ -6,11 +6,10 @@ from kivy.lang import Builder
 
 #5 screens:
 #home page
-#login screen
+#settings page
 #user profile
-#main page
-#about page
-
+#media page
+#trending page
 
 kv_string = '''
 #:import os os
@@ -44,9 +43,11 @@ kv_string = '''
 <StartScreen@Screen>:
     BoxLayout:
         orientation: 'vertical'
+        id: 'mainboxlayout'
         BoxLayout:
             orientation: 'horizontal'
             size_hint: (1, 0.1)
+            id: 'topboxlayout'
             Button: 
                 text: "\U000F107D"
                 # text: "transition to settings screen"
@@ -78,6 +79,11 @@ kv_string = '''
 
         Button: 
             text: "Start Screen!"
+            on_release: 
+                import pdb
+                pdb.set_trace()
+                app.get_running_app().root.ids["MediaScreenID"].ids["'mediabuttonID'"].text = "changed text from main screen"
+                self.text = "changed text in media screen"
 
 <SettingsScreen@Screen>:
     BoxLayout:
@@ -105,10 +111,12 @@ kv_string = '''
     BoxLayout:
         orientation: 'vertical'
         Button: 
+            id: 'startbuttonID'
             text: "Back to start"
             size_hint: (1, 0.1)
             on_release: root.parent.current = 'startscreen'
         Button: 
+            id: 'mediabuttonID'
             text: "Media screen!"
 
 <TrendingScreen@Screen>:
@@ -120,9 +128,10 @@ kv_string = '''
             on_release: root.parent.current = 'startscreen'
         Button: 
             text: "Trending screen!"
-
+            
 ScreenManagerExample:
 '''
+
 class smApp(App):
     title = "screen manager example"
     def build(self):
