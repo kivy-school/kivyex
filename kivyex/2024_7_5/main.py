@@ -1,8 +1,9 @@
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.clock import Clock
 
 kv_string = '''
-BoxLayout:
+<CustomBoxLayout@BoxLayout>:
     orientation: 'vertical'
     BoxLayout:
         orientation: 'horizontal'
@@ -11,18 +12,30 @@ BoxLayout:
             text: "start timer!"
         Button:
             text: "cancel timer"
+    Button:
+        size_hint: (1, 0.2)
+        text: "timer only once"
     BoxLayout:
         orientation: 'horizontal'
         Button:
             id: "hoursbuttonID"
-            text: "hours"
+            text: "30 seconds"
         Button:
             id: "minutesbuttonID"
-            text: "minutes"
+            text: "10 seconds"
         Button:
             id: "secondsbuttonID"
             text: "seconds"
 '''
+
+class CustomBoxLayout():
+    def start_timers(self, *args):
+        Clock.schedule_interval(updatecount, 1)
+        Clock.schedule_interval(updatecount, 10)
+        Clock.schedule_interval(updatecount, 30)
+
+    def start_timer_once(self, *args):
+        Clock.schedule_once(my_callback, 5)
 
 class smApp(App):
     def build(self):
