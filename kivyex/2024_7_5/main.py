@@ -14,10 +14,13 @@ BoxLayout:
     BoxLayout:
         orientation: 'horizontal'
         Button:
+            id: "hoursbuttonID"
             text: "hours"
         Button:
+            id: "minutesbuttonID"
             text: "minutes"
         Button:
+            id: "secondsbuttonID"
             text: "seconds"
 '''
 
