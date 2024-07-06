@@ -1,0 +1,20 @@
+ - [ ] kivy clock video
+ - [ ] examples:
+ - [ ] timer only once in 5 seconds
+ - [ ] timer every 1 sec, 10 sec, 30 sec
+ - [x] **how to start a timer?**
+	 - [x] kivy.clock import Clock
+	 - [x] self.attribute = clock.schedule_interval ({your function here}, time interval )
+ - [x] **Unscheduling: keep a reference to your clock objects!**
+ - [x] saving reference to the clock schedule in the customboxlayout class
+ - [x] unschedule all 3 clock widgets
+ - [ ] **why use properties?**
+ - [ ] properties force a kivy update
+ - [ ] PART A DONE
+ - [ ] **Calling clock functions with arguments:**
+	 - [ ] **Partial**
+		 - [ ] partial(function, args, kwargs)
+     - [ ] **lambda** (when func does not accept dt)
+		 - [ ] If you want to schedule a function that doesn’t accept the dt argument (read the `lambdaexample` notes         
+		 - [ ]  You cannot unschedule an anonymous function unless you keep a reference to it. It’s better to add *args to your function definition so that it can be called with an arbitrary number of parameters.
+       PART B DONE
