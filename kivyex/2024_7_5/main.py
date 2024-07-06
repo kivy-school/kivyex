@@ -64,6 +64,8 @@ class CustomBoxLayout(BoxLayout):
     thirty_seconds = NumericProperty(0)
 
     def start_timers(self, *args):
+        # self.single = Clock.schedule_interval(
+        #     self.update_specific(), 1)
         self.single = Clock.schedule_interval(
             partial(self.update_specific, clockID = "single"), 1)
         self.ten =  Clock.schedule_interval(
