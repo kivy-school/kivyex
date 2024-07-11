@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/_tumV4EPorw/maxresdefault.jpg)](https://www.youtube.com/embed/_tumV4EPorw)
+kivyschool link: https://kivyschool.com/blog/2024/07/10/clockschedule2/
+
 [![Watch the video](https://img.youtube.com/vi/3jcG4D4Kffg/maxresdefault.jpg)](https://www.youtube.com/embed/3jcG4D4Kffg)
 kivyschool link: https://kivyschool.com/blog/2024/07/06/clockschedule/
 
