@@ -106,8 +106,8 @@ class CustomBoxLayout(BoxLayout):
         
 
     def update_specific(self, *args, **kwargs):
-        import pdb
-        pdb.set_trace()
+        # import pdb
+        # pdb.set_trace()
         if 'clockID' in kwargs.keys():
             if kwargs['clockID'] == "single":
                 self.seconds += 1
