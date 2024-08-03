@@ -14,12 +14,12 @@ class MyApp(App):
     def build(self):
         if hasattr(sys, "_MEIPASS"):
             meipass_icon_path = str(pathlib.Path(sys._MEIPASS) / 'icons8-discord-48.png')
+            # meipass_icon_path = pathlib.Path(sys._MEIPASS) / 'icons8-discord-48.png'
             self.icon = meipass_icon_path
             # print("?", meipass_icon_path)
         else:
             self.icon = 'icons8-discord-48.png'
         return Builder.load_string(kvString)
-
 
 if __name__ == '__main__':
     #this is to make the Kivy window always on top
