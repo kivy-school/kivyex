@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/LSWGH7LHn20/maxresdefault.jpg)](https://www.youtube.com/embed/LSWGH7LHn20)
+kivyschool link: https://kivyschool.com/blog/2024/08/07/set-kivy-icon-in-PyInstaller/
+
 [![Watch the video](https://img.youtube.com/vi/_tumV4EPorw/maxresdefault.jpg)](https://www.youtube.com/embed/_tumV4EPorw)
 kivyschool link: https://kivyschool.com/blog/2024/07/10/clock-schedule-part-2/
 
