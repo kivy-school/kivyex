@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/-Lw8aSn-kaA/maxresdefault.jpg)](https://www.youtube.com/embed/-Lw8aSn-kaA)
+kivyschool link: https://kivyschool.com/blog/2024/08/09/pixel-editor/
+
 [![Watch the video](https://img.youtube.com/vi/LSWGH7LHn20/maxresdefault.jpg)](https://www.youtube.com/embed/LSWGH7LHn20)
 kivyschool link: https://kivyschool.com/blog/2024/08/07/set-kivy-icon-in-PyInstaller/
 
