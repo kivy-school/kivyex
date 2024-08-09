@@ -136,6 +136,7 @@ class MyPixel(Widget):
 
 class MyApp(App):
     def build(self):
+        self.title = 'Pixel Editor Proof of Concept'
         return MyPixel()
 
 if __name__ =='__main__':
