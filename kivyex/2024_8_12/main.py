@@ -9,9 +9,7 @@ it should actually be drawn with canvas instructions, this is because pngs are n
 
 - Use RelativeLayout because it moves the children (aka buttons) correctly when the window is resized
 
-- for something as specific as this, you need to do things manually IMO
-
-- to see the button, draw a canvas rectangle and start manually moving
+- to see the button, draw a x and start manually moving
 
 - use DP!, kivy's density independent pixels, that way it looks the same on any device
 
@@ -21,19 +19,17 @@ it should actually be drawn with canvas instructions, this is because pngs are n
 
 - I cheated and used kivy-loader
 
-- modify the background_X properties if you want button responsiveness
+- modify the background_X properties if you want button responsiveness (incorrect, to remove the original button just do `background_color = 0, 0, 0, 0`)
 
-- I used microsoft powertoys START+SHIFT+C to get the correct rgba color from ur reference image
-
-- i used kivy reloader because restarting the app every second hurt my fingers
-
-- kivy sometimes is reverse (aka BGR instead of RGB) (was a problem when setting textcolors, it's BGR format)
-
-- to make bg color of a button transparent just set:
+- (NOT NECESSARY) to make bg color of a button transparent just set: 
 background_color: 0, 0, 0, 0 in KV
 background_color = 0, 0, 0, 0 in python (because it's a property)
 
-- in order to debug u gotta turn it off so u can see what's going on tho
+- I used microsoft powertoys START+SHIFT+C to get the correct rgba color from ur reference image
+
+- kivy sometimes is reverse (aka BGR instead of RGB) (was a problem when setting textcolors, it's BGR format)
+
+- i used kivy reloader because restarting the app every second hurt my fingers
 
 - # calculate stardate from this repo
 # https://github.com/Goddard/stardate/blob/master/stardate/stardate.py
