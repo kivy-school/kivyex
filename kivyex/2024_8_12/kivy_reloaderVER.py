@@ -19,9 +19,9 @@ it should actually be drawn with canvas instructions, this is because pngs are n
 
 - I cheated and used kivy-loader
 
-- modify the background_X properties if you want button responsiveness (incorrect, to remove the original button just do `background_color = 0, 0, 0, 0`)
+- (NOT NECESSARY) modify the background_X properties if you want button responsiveness (incorrect, to remove the original button just do `background_color = 0, 0, 0, 0`)
 
-- (NOT NECESSARY) to make bg color of a button transparent just set: 
+- to make bg color of a button transparent just set: 
 background_color: 0, 0, 0, 0 in KV
 background_color = 0, 0, 0, 0 in python (because it's a property)
 
