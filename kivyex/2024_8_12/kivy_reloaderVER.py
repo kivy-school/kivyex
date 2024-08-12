@@ -9,9 +9,7 @@ it should actually be drawn with canvas instructions, this is because pngs are n
 
 - Use RelativeLayout because it moves the children (aka buttons) correctly when the window is resized
 
-- for something as specific as this, you need to do things manually IMO
-
-- to see the button, draw a canvas rectangle and start manually moving
+- to see the button, draw a x and start manually moving
 
 - use DP!, kivy's density independent pixels, that way it looks the same on any device
 
@@ -21,19 +19,17 @@ it should actually be drawn with canvas instructions, this is because pngs are n
 
 - I cheated and used kivy-loader
 
-- modify the background_X properties if you want button responsiveness
+- modify the background_X properties if you want button responsiveness (incorrect, to remove the original button just do `background_color = 0, 0, 0, 0`)
 
-- I used microsoft powertoys START+SHIFT+C to get the correct rgba color from ur reference image
-
-- i used kivy reloader because restarting the app every second hurt my fingers
-
-- kivy sometimes is reverse (aka BGR instead of RGB) (was a problem when setting textcolors, it's BGR format)
-
-- to make bg color of a button transparent just set:
+- (NOT NECESSARY) to make bg color of a button transparent just set: 
 background_color: 0, 0, 0, 0 in KV
 background_color = 0, 0, 0, 0 in python (because it's a property)
 
-- in order to debug u gotta turn it off so u can see what's going on tho
+- I used microsoft powertoys START+SHIFT+C to get the correct rgba color from ur reference image
+
+- kivy sometimes is reverse (aka BGR instead of RGB) (was a problem when setting textcolors, it's BGR format)
+
+- i used kivy reloader because restarting the app every second hurt my fingers
 
 - # calculate stardate from this repo
 # https://github.com/Goddard/stardate/blob/master/stardate/stardate.py
@@ -44,9 +40,8 @@ https://fonts.google.com/specimen/Antonio
 
 '''
 
-# from kivy_reloader.app import App
-from kivy.app import App
-# import trio
+from kivy_reloader.app import App
+import trio
 # from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.button import Button
@@ -171,10 +166,10 @@ kvstring = '''
 #:import time time
 
 <CustomButton@Button>:
-    background_normal: ''
-    background_down: ''
-    background_disabled_normal: ''
-    background_disabled_down: ''
+    # background_normal: ''
+    # background_down: ''
+    # background_disabled_normal: ''
+    # background_disabled_down: ''
 
 RelativeLayout:
     id: mainRL_ID
@@ -184,12 +179,12 @@ RelativeLayout:
             size: self.parent.size if self.parent is not None else self.size
     # CustomButton:
     CustomButton:
-        canvas.after:
-            Color:
-                rgba: 1, 0, 0, 0.5
-            Rectangle:
-                size: self.size
-                pos: self.pos
+        # canvas.after:
+        #     Color:
+        #         rgba: 1, 0, 0, 0.5
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
         font: 'Antonio-VariableFont_wght.ttf'
         text: 'MOZILLA FIREFOX'
         text_size: self.size
@@ -231,6 +226,7 @@ RelativeLayout:
         text: self.strtime
         text_size: self.size
         color: 50,153,255,1
+        # color: 1,103,206,1
         # color: 0,0,1,1
         # rgb(255, 153, 50)
         halign: 'right'
@@ -238,6 +234,7 @@ RelativeLayout:
         size_hint: None, None #need to turn this off so custom sizing applies
         size: root.size[0] * 0.2, root.size[1] * 0.1
         pos: root.size[0] * 0.38, root.size[1] * 0.85
+        # pos: root.size[0] * 0.45, root.size[1] * 0.7
     
     CustomButton:
         canvas.after:
@@ -307,6 +304,6 @@ class LCARS(App):
 if __name__ == '__main__':
     from kivy.core.window import Window
     Window.always_on_top = True
+    # LCARS().run()
     app = LCARS()
-    # trio.run(app.async_run, "trio")
-    LCARS().run()
+    trio.run(app.async_run, "trio")
