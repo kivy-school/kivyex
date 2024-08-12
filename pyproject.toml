@@ -13,7 +13,7 @@ seaborn = "^0.13.2"
 yt-dlp = "^2024.5.27"
 pyinstaller = "^6.8.0"
 kivymd = {url = "https://github.com/kivymd/KivyMD/archive/master.zip"}
-psutil = "^6.0.0"
+psutil = "^6.0"
 panda3d = "^1.10.14"
 panda3d-kivy = "^0.5.2"
 
