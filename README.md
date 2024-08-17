@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/HM-UEu3eVgY/maxresdefault.jpg)](https://www.youtube.com/embed/HM-UEu3eVgY)
+kivyschool link: https://kivyschool.com/blog/2024/08/16/star-trek-tng-LCARS-GUI/
+
 [![Watch the video](https://img.youtube.com/vi/-Lw8aSn-kaA/maxresdefault.jpg)](https://www.youtube.com/embed/-Lw8aSn-kaA)
 kivyschool link: https://kivyschool.com/blog/2024/08/09/pixel-editor/
 
