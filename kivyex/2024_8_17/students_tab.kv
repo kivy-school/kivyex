@@ -1,0 +1,215 @@
+<StudentsTab>:
+  name: "students"
+  table_grid: table_grid
+  MGridLayout:
+    size_hint: 1, 1
+    rows: 1
+    orientation: "lr-tb"
+    padding: dp(10)
+    background_color: app.color.bg.normal.prim
+
+    MGridLayout:
+      size_hint: 1, 1
+      cols: 1
+      orientation: "tb-lr"
+      border_color: app.color.all.black
+
+      # TODO: Should be a 2x2 stencil, with the bottom half hidden. lr-tb the
+      #       the icons:
+      #       1. add user
+      #       2. open/close search
+      #       3. [empty]
+      #       4. clear search fields
+      MGridLayout:
+        size_hint: 1, None
+        rows: 1
+        orientation: "lr-tb"
+        
+        MBoxLayout:
+          size_hint: 1/4, 1
+          orientation: "horizontal"
+          padding: dp(4)
+          spacing: dp(4)
+          BoxButton:
+            orientation: "horizontal"
+            size_hint: 1, 1
+            border_color: app.color.bg.construct.prim
+            padding: dp(5)
+            border_radius: dp(5)
+            on_press: print("AA")
+            Icon:
+              size_hint: 1, 1
+              name: "user-plus"
+              size: 22, 20
+          BoxButton:
+            orientation: "horizontal"
+            size_hint: 1, 1
+            border_color: 0, 0, 1, 0.5
+            padding: dp(5)
+            border_radius: dp(5)
+            on_press: print("BB")
+            Icon:
+              size_hint: 1, 1
+              name: "magnifying-glass"
+              size: 20, 20
+
+        Widget:
+          size_hint: 1/2, 1
+
+        TH:
+          text: "First Name"
+        TH:
+          text: "Last Name"
+        TH:
+          text: "Class"
+
+      StudentSearchForm:
+        size_hint: 1, None
+
+      # Studentss Table
+      MBoxLayout:
+        size_hint: 1, 1
+        orientation: "horizontal"
+
+        MGridLayout:
+          border_color: app.color.all.red
+          border_width: 1
+          orientation: "tb-lr"
+          cols: 1
+          size_hint: 1, None
+          height: self.minimum_height
+          spacing: dp(5)
+          pos_hint: {"top": 1}
+          id: table_grid
+
+        RecycleView:
+          do_scroll: False, True
+          size_hint: 1, 1
+          scroll_type: ["bars"]
+          bar_width: dp(5)
+          bar_pos_y: "right"
+          viewclass: "StudentsTableRow"
+          pos_hint: {"top": 1}
+          data: root.students
+
+          StudentsRecycleGrid:
+            border_color: app.color.all.red
+            border_width: 1
+            orientation: "tb-lr"
+            cols: 1
+            size_hint: 1, None
+            height: self.minimum_height
+            spacing: dp(5)
+            pos_hint: {"center_x": 0.5}
+            default_pos_hint: {"center_x": 0.5}
+            default_size_hint: 1, None
+            default_height: dp(100)
+
+<StudentsTableRow>:
+  rows: 1
+  border_color: app.color.all.green
+  # orientation: "lr-tb"
+  orientation: "horizontal"
+  size_hint: 1, None
+  height: self.minimum_height
+
+  MGridLayout:
+    size_hint: 1/4, 1
+    rows: 1
+    orientation: "lr-tb"
+    padding: dp(5), 0
+    spacing: dp(5)
+
+    BoxButton:
+      orientation: "horizontal"
+      size_hint: 1, 1
+      background_color: app.color.bg.edit.sec
+      pos_hint: {"center_x": 0.5, "center_y": 0.5}
+      Icon:
+        size_hint: 1, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        name: "pen-to-square"
+        size: 20, 20
+
+    BoxButton:
+      orientation: "horizontal"
+      size_hint: 1, 1
+      background_color: app.color.bg.destroy.sec
+      pos_hint: {"center_x": 0.5, "center_y": 0.5}
+      Icon:
+        size_hint: 1, 1
+        name: "trash"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        size: 18, 20
+
+  TD:
+    n: 2
+    text: str(root.id)
+    link: True
+  TD:
+    text: root.first_name
+  TD:
+    text: root.last_name
+  TD:
+    text: root.klass
+    link: True
+
+<TH@MGridLayout>:
+  text: ""
+  n: 1
+  size_hint: 1/self.n, None
+  border_color: app.color.all.black
+  rows: 1
+  orientation: "lr-tb"
+  padding: 0, dp(10)
+  height: self.minimum_height
+  MLabel:
+    size_hint: 1, None
+    font_size: dp(20)
+    halign: "center"
+    bold: True
+    text: root.text
+
+<TD@MGridLayout>:
+  text: ""
+  link: False
+  n: 1
+  size_hint: 1/self.n, None
+  border_color: app.color.all.black
+  rows: 1
+  orientation: "lr-tb"
+  padding: 0, dp(7.5)
+  background_color: app.color.bg.link.prim if self.link else app.color.bg.normal.prim
+  height: self.minimum_height
+  MLabel:
+    size_hint: 1, None
+    halign: "center"
+    underline: root.link
+    color: app.color.fg.link.prim if root.link else app.color.fg.normal.prim
+    text: root.text
+    bold: root.link
+
+<MFormTextInput@TextInput>:
+  size_hint: 1, None
+  multiline: False
+  write_tab: False
+  height: self.minimum_height
+
+<MInputBox@MBoxLayout>:
+  size_hint: 1, None
+  height: self.minimum_height
+  orientation: "vertical"
+  padding: dp(5)
+  MFormTextInput:
+
+<StudentSearchForm@MBoxLayout>:
+  size_hint_y: None
+  orientation: "horizontal"
+  height: self.minimum_height
+  Widget:
+    size_hint: 1/4, 0
+  MInputBox:
+    size_hint: 1/2, 0
+  MInputBox:
+  MInputBox:
+  MInputBox:
