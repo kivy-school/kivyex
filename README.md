@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/vFiUvSS9hu8/maxresdefault.jpg)](https://www.youtube.com/embed/vFiUvSS9hu8)
+kivyschool link: https://kivyschool.com/blog/2024/08/29/showborder-module/
+
 [![Watch the video](https://img.youtube.com/vi/HM-UEu3eVgY/maxresdefault.jpg)](https://www.youtube.com/embed/HM-UEu3eVgY)
 kivyschool link: https://kivyschool.com/blog/2024/08/16/star-trek-tng-LCARS-GUI/
 
