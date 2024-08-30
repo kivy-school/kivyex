@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/76ZGpuMocNs/maxresdefault.jpg)](https://www.youtube.com/embed/76ZGpuMocNs)
+kivyschool link: https://kivyschool.com/blog/2024/08/29/pygame-longintrepr-not-found-solution/
+
 [![Watch the video](https://img.youtube.com/vi/vFiUvSS9hu8/maxresdefault.jpg)](https://www.youtube.com/embed/vFiUvSS9hu8)
 kivyschool link: https://kivyschool.com/blog/2024/08/29/showborder-module/
 
