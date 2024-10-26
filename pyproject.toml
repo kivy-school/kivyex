@@ -13,9 +13,10 @@ seaborn = "^0.13.2"
 yt-dlp = "^2024.5.27"
 pyinstaller = "^6.8.0"
 kivymd = {url = "https://github.com/kivymd/KivyMD/archive/master.zip"}
-psutil = "^6.0"
 panda3d = "^1.10.14"
 panda3d-kivy = "^0.5.2"
+pygame = "^2.6.0"
+kivy-reloader = "^0.4.2"
 
 
 [build-system]
