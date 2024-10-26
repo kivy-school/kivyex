@@ -71,3 +71,5 @@ if __name__ == "__main__":
         print("full exception", "".join(traceback.format_exception(*sys.exc_info())))
         import time
         time.sleep(10)
+
+from pygame import mixer
