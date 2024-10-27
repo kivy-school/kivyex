@@ -27,7 +27,8 @@ class MyPixel(Widget):
         #self.canvas.before.clear()
         with self.canvas.before:
             Color(
-                rgba = [0.4, 0.6, 0.6, 1]
+                # rgba = [0.4, 0.6, 0.6, 1]
+                rgba = [0.7, 0.1, 0.3, 1]
                 )
             rec = Rectangle(size=[20, 20], pos=coordenadas)
             
