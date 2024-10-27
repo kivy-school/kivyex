@@ -213,12 +213,12 @@ kvstring = '''
         pos: root.size[0] * 0.04, root.size[1] * 0.585
         
     CustomTimeButton:
-        canvas.after:
-            Color:
-                rgba: 1, 0, 0, 0.5
-            Rectangle:
-                size: self.size
-                pos: self.pos
+        # canvas.after:
+        #     Color:
+        #         rgba: 1, 0, 0, 0.5
+        #     Rectangle:
+        #         size: self.size
+        #         pos: self.pos
         # canvas: 
         #     Color:
         #         # rgba: self.color

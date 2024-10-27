@@ -49,15 +49,15 @@ class MainApp(App):
     def cursor_show(self, *args):
         self.image = 'Clippy.png'
         with Window.canvas.after:
-            self.cursor_rect = Rectangle(source= 'Clippy.png', size=(32, 32), pos=(Window.mouse_pos[0],Window.mouse_pos[1])) 
+            self.cursor_rect = Rectangle(source= 'Clippy.png', size=(128, 128), pos=(Window.mouse_pos[0],Window.mouse_pos[1])) 
         Clock.schedule_interval(self.cursorPosition, 1/60)
     
     def cursorPosition(self, *args):
         # Get the mouse position and move the cursor image
         mouse_pos = Window.mouse_pos
         self.cursor_rect.pos = (
-            (mouse_pos[0] - self.cursor_rect.size[0] / 2)+7, 
-            (mouse_pos[1] - self.cursor_rect.size[1] / 2)-5) #adjust so that the mouse is centered on the magnifying glass
+            (mouse_pos[0] - self.cursor_rect.size[0] / 2), 
+            (mouse_pos[1] - self.cursor_rect.size[1] / 2)) 
 
     def change_cursor_image(self, new_image_path):
         # Load a new image texture
