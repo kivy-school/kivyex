@@ -1,6 +1,9 @@
 # kivyex
 Library of Kivy School Examples
 
+[![Watch the video](https://img.youtube.com/vi/grfT-B2PAEk/maxresdefault.jpg)](https://www.youtube.com/embed/grfT-B2PAEk)
+kivyschool link: https://kivyschool.com/blog/2024/10/30/custom-mouse-cursor/
+
 [![Watch the video](https://img.youtube.com/vi/76ZGpuMocNs/maxresdefault.jpg)](https://www.youtube.com/embed/76ZGpuMocNs)
 kivyschool link: https://kivyschool.com/blog/2024/08/29/pygame-longintrepr-not-found-solution/
 
